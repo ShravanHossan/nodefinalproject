@@ -45,7 +45,7 @@ const getVcodeImage = (req, res) => {
 };
 
 app.get('/vcode',getVcodeImage);
-app.get('/googleecf287c4349c8d5d.hbs', (req, res)=> {
+app.get('/googleecf287c4349c8d5d.html', (req, res)=> {
     res.render('googleecf287c4349c8d5d.hbs');
 });
 //Homepage
