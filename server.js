@@ -45,7 +45,9 @@ const getVcodeImage = (req, res) => {
 };
 
 app.get('/vcode',getVcodeImage);
-
+app.get('/googleecf287c4349c8d5d.hbs', (req, res)=> {
+    res.render('googleecf287c4349c8d5d.hbs';
+});
 //Homepage
 app.get('/', (request, response) => {
     //checks if the user is signed in, if so displays renders a page that is useful to the user
