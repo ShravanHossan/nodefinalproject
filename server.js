@@ -417,6 +417,8 @@ app.post('/song_search', (request, response)=> {
 
     lyrics(request.body.song_lyrics, request.body.song_artist).then(res=> {
         // console.log("Success");
+        // console.log(res.lyric);
+        response.status(200);
         response.render("song_lyrics.hbs", {
             song: res.title,
             artist: res.artist,
@@ -489,8 +491,8 @@ app.post('/signup_form', async (request, response) => {
                 Email: email,
                 Password: psw
             });
-
-            response.render('confirm.hbs');
+            request.session.email = email;
+            response.redirect('/');
         }
 
     });
@@ -536,6 +538,10 @@ app.post('/login_form', async (request, response) => {
 
 //Enters a thread in a database
 app.post('/thread_form', async (request, response) => {
+    if (typeof request.session.email === "undefined"){
+        response.send("User not Logged in");
+        return
+    }
     var email = request.session.email;
     var title = request.body.title;
     var message = request.body.message;
