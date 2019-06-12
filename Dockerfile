@@ -1,3 +1,4 @@
+FROM resin/rpi-raspbian:latest
 FROM node:8
 
 # Create app directory
