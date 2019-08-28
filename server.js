@@ -21,7 +21,8 @@ hbs.registerPartials(__dirname + '/views/partials/');
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
-
+app.use(express.static('.well-known'));
+app.use(express.static('public'));
 app.use(session({
     secret: 'very safe',
     resave: true,
