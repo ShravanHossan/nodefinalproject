@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const hbs = require('hbs');
 const register = require('./register.js');
 const bodyparser = require('body-parser');
@@ -9,6 +10,8 @@ const port = process.env.PORT || 8080;
 const session = require('express-session');
 const captchapng = require('captchapng');
 const lyrics = require('./song_search.js');
+const http = require('http');
+const https = require('https');
 var app = express();
 app.use(cookieParser());
 app.use(bodyparser.json());
@@ -603,11 +606,21 @@ app.get('/sign-out', (req, res) => {
 });
 
 
-app.listen(port, async () => {
-    await utils.init();
-    console.log(`Server is up on port ${port}`);
-    app.emit("appRunning")
+// app.listen(port, async () => {
+//     await utils.init();
+//     console.log(`Server is up on port ${port}`);
+//     app.emit("appRunning")
+//
+// });
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(app);
 
+httpServer.listen(8080, () => {
+    console.log('HTTP Server running on port 8080');
+});
+
+httpsServer.listen(8443, () => {
+    console.log('HTTPS Server running on port 8443');
 });
 
 module.exports = app;
