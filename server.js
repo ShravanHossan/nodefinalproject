@@ -45,7 +45,7 @@ const getVcodeImage = (req, res) => {
     res.end(imgbase64);
 };
 
-app.get('/.well-known/acme-challenge/U3tN6wpVzPxLeCRf6fNWupdydtkW3qOs8NCfcSgwKxQ', (req,res) => {
+app.get('/.well-known/acme-challenge/bXaLwDwHfaxQzw5DkFJ4BBo141OXu3YaojhU7kOiv7U', (req,res) => {
     res.render('certbot.hbs')
 });
 app.get('/all_threads', async (request, response) => {
