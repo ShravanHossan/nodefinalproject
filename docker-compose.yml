@@ -38,16 +38,16 @@ services:
       - webserver
     command: certonly --webroot --webroot-path=/var/www/html --email admin@shossan.ca --agree-tos --no-eff-email --staging -d muziki.shossan.ca  -d www.muziki.shossan.ca
 
-  volumes:
-    certbot-etc:
-    certbot-var:
-    web-root:
-      driver: local
-      driver_opts:
-        type: none
-        device: /home/pirate/Agile-Development/views/
-        o: bind
+volumes:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/pirate/Agile-Development/views/
+      o: bind
 
-  networks:
-    app-network:
-      driver: bridge
+networks:
+  app-network:
+    driver: bridge
