@@ -11,7 +11,7 @@
   "author": "Group 6",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bluebird": "^3.5.4",
     "captchapng": "0.0.1",
     "cheerio": "^1.0.0-rc.3",
@@ -22,7 +22,7 @@
     "hbs": "^4.0.4",
     "html": "^1.0.0",
     "jssoup": "0.0.10",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "md5": "^2.2.1",
     "mockgoose": "^8.0.1",
     "mongodb": "^3.2.3",
