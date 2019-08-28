@@ -28,7 +28,7 @@ services:
       - app-network
 
   certbot:
-    image: certbot/certbot
+    image: tobi312/rpi-certbot
     container_name: certbot
     volumes:
       - certbot-etc:/etc/letsencrypt
